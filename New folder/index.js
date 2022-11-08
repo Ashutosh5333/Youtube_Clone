@@ -1,13 +1,14 @@
 import Navbar from "./components/Navbar.js";
-
-  let api_key = "AIzaSyBQZ-F1RTsMY7cNVGmDShioDwiP9Kn5Xtg"
-
 let navbar = document.getElementById("navbar");
 navbar.innerHTML = Navbar();
+
+
 
 document.getElementById("logo").addEventListener("click", function () {
   location.href = "index.html";
 });
+
+let api_key = "AIzaSyBQZ-F1RTsMY7cNVGmDShioDwiP9Kn5Xtg"
 
 let getData = async () => {
   try {
@@ -27,16 +28,12 @@ let getData = async () => {
 let search_btn = document.getElementById("search_btn_div");
 search_btn.addEventListener("click", getData);
 
-// Get the input field
-var input = document.getElementById("search_bar");
 
-// Execute a function when the user presses a key on the keyboard
+var input = document.getElementById("search_bar");
 input.addEventListener("keypress", function (e) {
-  // If the user presses the "Enter" key on the keyboard
+  
   if (e.key === "Enter") {
-    // Cancel the default action, if needed
     e.preventDefault();
-    // Trigger the button element with a click
     search_btn.click();
   }
 });
